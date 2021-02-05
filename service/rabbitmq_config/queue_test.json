@@ -1,0 +1,13 @@
+{
+  "queues":[
+    {
+      "name":"test",
+      "vhost":"/",
+      "durable":false,
+      "auto_delete":true,
+      "arguments":{
+        "x-queue-type":"classic"
+      }
+    }
+  ]
+}

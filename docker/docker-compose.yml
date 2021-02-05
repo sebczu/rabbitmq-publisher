@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+
+  rabbitmq:
+    image: rabbitmq:3.8.9-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: test
+
+  rabbitmq-publisher:
+    image: rabbitmq-publisher:latest
+    environment:
+      RABBITMQ_HOSTNAME: rabbitmq
+      RABBITMQ_PORT: 15672
+      RABBITMQ_USERNAME: admin
+      RABBITMQ_PASSWORD: test
+      EVENT_DELAY: 1
+      EVENT_COUNT: 100
+      QUEUE_NAME: test
+    volumes:
+      - ./volumes/events:/rabbitmq_events/events
