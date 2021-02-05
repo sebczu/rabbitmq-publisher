@@ -28,8 +28,6 @@ done
 # Exit immediately if any command exits with a non-zero status
 set -e
 
-rabbitmqadmin --host=$RABBITMQ_HOSTNAME --port=$RABBITMQ_PORT --username=$RABBITMQ_USERNAME --password=$RABBITMQ_PASSWORD import /rabbitmq_config/queue_test.json
-
 echo "actual configuration:"
 rabbitmqadmin --host=$RABBITMQ_HOSTNAME --port=$RABBITMQ_PORT --username=$RABBITMQ_USERNAME --password=$RABBITMQ_PASSWORD export rabbitmq_configuration.json
 cat rabbitmq_configuration.json
