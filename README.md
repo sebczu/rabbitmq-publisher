@@ -1,4 +1,4 @@
-### **RABBITMQ-MANAGER**
+### **RABBITMQ-PUBLISHER**
 **docker + rabbitmq + rabbitmqadmin**
 
 #### 1. Build service
